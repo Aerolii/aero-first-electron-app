@@ -1,6 +1,8 @@
 import { BrowserWindow, app } from 'electron'
 import path from 'path'
 
+console.log('Electron app starting...')
+
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 800,
