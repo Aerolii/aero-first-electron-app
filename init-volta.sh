@@ -32,14 +32,11 @@ echo "当前 Node 版本：$(node -v)"
 # 绑定到项目
 volta pin node@$NODE_VERSION
 
-# 安装 pnpm 以保持一致的包管理工具
-echo "正在通过 Volta 安装 pnpm..."
+# 安装 npm 以保持一致的包管理工具
+echo "正在通过 Volta 安装 npm..."
 volta install npm@$NPM_VERSION
 
 volta pin npm@$NPM_VERSION
-
-# 显示 pnpm 版本
-echo "当前 pnpm 版本：$(pnpm -v)"
 
 echo "✅ Volta 配置完成！"
 echo "📌 当前项目绑定的版本如下："
