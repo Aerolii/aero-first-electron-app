@@ -4,7 +4,6 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "postinstall": "chmod +x ./init-volta.sh && ./init-volta.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
