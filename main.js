@@ -1,5 +1,8 @@
-import { BrowserWindow, app } from 'electron'
+import { BrowserWindow, app, ipcMain } from 'electron'
+// import path from 'path'
+// import path from 'node:path'
 import path from 'path'
+// import { fileURLToPath } from 'node:url'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -13,13 +16,19 @@ const createWindow = () => {
 		height: 600,
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
+			// preload: './preload.js',
 		},
 	})
 
+	console.log(path.join(__dirname, 'preload.js'))
+
 	win.loadFile('./index.html')
+
+	win.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
+	ipcMain.handle('ping', () => 'pong')
 	createWindow()
 
 	app.on('activate', () => {
